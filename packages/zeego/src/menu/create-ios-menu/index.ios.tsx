@@ -3,41 +3,41 @@ import { Image, View } from 'react-native'
 import {
   ContextMenuButton,
   ContextMenuView,
+  ImageSystemConfig,
   MenuActionConfig,
   MenuConfig,
   MenuElementSize,
-  ImageSystemConfig,
 } from 'react-native-ios-context-menu'
 
 import {
   flattenChildren,
-  pickChildren,
   isInstanceOfComponent,
+  pickChildren,
 } from '../children'
 import { create } from '../display-names'
 import { filterNull } from '../filter-null'
 import type {
+  ContextMenuAuxliliaryProps,
+  ContextMenuContentProps,
+  ContextMenuPreviewProps,
+  ContextMenuSubContentProps,
+  MenuArrowProps,
+  MenuCheckboxItemProps,
   MenuContentProps,
   MenuGroupProps,
+  MenuItemIconProps,
+  MenuItemImageProps,
+  MenuItemIndicatorProps,
   MenuItemProps,
   MenuItemSubtitleProps,
   MenuItemTitleProps,
+  MenuLabelProps,
   MenuRootProps,
+  MenuSeparatorProps,
+  MenuSubContentProps,
+  MenuSubProps,
   MenuSubTriggerProps,
   MenuTriggerProps,
-  MenuItemIconProps,
-  MenuCheckboxItemProps,
-  MenuSeparatorProps,
-  MenuItemImageProps,
-  MenuItemIndicatorProps,
-  MenuLabelProps,
-  ContextMenuPreviewProps,
-  ContextMenuContentProps,
-  MenuArrowProps,
-  MenuSubProps,
-  ContextMenuSubContentProps,
-  MenuSubContentProps,
-  ContextMenuAuxliliaryProps,
 } from '../types'
 
 const createIosMenu = (Menu: 'ContextMenu' | 'DropdownMenu') => {
@@ -467,6 +467,9 @@ If you want to use a custom component as your <Content />, you can use the creat
       .targetChildren?.[0]
 
     const previewProps = preview?.props as ContextMenuPreviewProps | undefined
+
+    console.log(preview);
+    console.log(previewProps);
 
     const onMenuDidHide =
       props.onOpenChange &&
